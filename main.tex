@@ -9,6 +9,17 @@
 	by Sergei Volodin
 \end{center}
 \subsection*{Axioms}
+0 Existence: $\exists x\, x=x$\\
+1 Extensionality: $\forall x\,\forall y\,\left(\forall z \left(z\in x\to z\in y\right)\to x=y \right)$\\
+2 Comprehension: $\forall z\,\forall \vec{w}\,\exists y\,\exists x\left(x\in y\leftrightarrow \left(z\in z \wedge\varphi\right)\right)$\\
+$\varphi=\varphi(x,z,\vec{w})$\\
+3 Pairing: $\forall x\,\forall y\,\exists z\,\left(x\in z\wedge y\in z\right)$\\
+4 Union: $\forall a\,\exists b\,\forall x\,\forall y\left((x\in y\wedge y\in a)\to x\in b\right)$\\
+5 Infinity: $\exists x\left(\exists y(y\in x\wedge\forall z\,z\notin y)\wedge \forall z(z\in x\to z\cup \{z\}\in x)\right)$\\
+6 Power: $\forall x\,\exists y\,\forall z\left(\forall u(u\in z\to u\in z)\to z\in y\right)$\\
+7 Foundation: $\forall x\left(\exists y\,y\in x\to\exists y(y\in x\wedge \neg \exists z(z\in x\wedge z\in y))\right)$\\
+8 Replacement: $\forall A\,\forall\vec{w}\left[\forall x(x\in A\to\exists !y\varphi)\to\exists B\,\forall x(x\in A\to \exists y(y\in B\wedge \varphi))\right]$\\
+9 Choice: $\forall x\left(\left\{\forall y(y\in x\exists z z\in y)\wedge \forall y\forall y'\left[y\in x\wedge y'\in x\wedge \exists z (z\in y\wedge z\in y')\right]\to y=y'\right\}\to\exists c\forall y(y\in x\to\exists !z(z\in y\wedge z\in c))\right)$
 \subsection*{Well-orderings}
 \subsection*{Ordinals}
 \subsection*{Extension by Definition \&\\ Conservative Extension}
