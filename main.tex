@@ -1,6 +1,8 @@
 \documentclass[twocolumn]{article}
 \usepackage[a4paper, margin=0.5in]{geometry}
 \usepackage{blindtext}
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage[utf8]{inputenc}
 
 \begin{document}
@@ -21,10 +23,61 @@ $\varphi=\varphi(x,z,\vec{w})$\\
 8 Replacement: $\forall A\,\forall\vec{w}\left[\forall x(x\in A\to\exists !y\varphi)\to\exists B\,\forall x(x\in A\to \exists y(y\in B\wedge \varphi))\right]$\\
 9 Choice: $\forall x\left(\left\{\forall y(y\in x\exists z z\in y)\wedge \forall y\forall y'\left[y\in x\wedge y'\in x\wedge \exists z (z\in y\wedge z\in y')\right]\to y=y'\right\}\to\exists c\forall y(y\in x\to\exists !z(z\in y\wedge z\in c))\right)$
 \subsection*{Well-orderings}
+$(A,R)$ ordering: $\forall x,y,z\in A\left((xRy\wedge yRz)\to xRz\right)$,
+$\forall x\in A\neg xRx$.\\
+Total: +$\forall x,y\in A\left(x\neq y\to(xRy\vee yRx)\right)$.
+Isomorph.: preserv. order\\
+$(A,<)$ WO: tot+$\forall B\subseteq A\left(B\neq \varnothing\to \exists x\in B\forall y\in B\,y\nless x\right)$\\
+$\lceil \frac{x}{\,}\rceil_A^<=\{y\in A|y<x\}\not\approx (A,<)$ is WO.\\
+$(A,<_A),\,(B,<_B)$ WO, then $\approx$, $\lceil \frac{x}{\,}\rceil_A^<\approx B$ or $\lceil \frac{x}{\,}\rceil_B^<\approx A$\\
+
 \subsection*{Ordinals}
+A trans.: $\forall x x\in A\to x\subseteq A$\\
+Ordinal $\Leftrightarrow$ WO+trans.\\
+$x\in \alpha\Rightarrow x\in On,\,x=\{x>y\in \alpha\}$\\
+$\approx\Rightarrow=$, $=,\in$ or $\ni$. Trans. class. Min in set.\\
+On is not a set. $(A,<)\approx !(\alpha,<_\alpha)=type(A,<)$\\
+$S\alpha=\alpha\cup\{\alpha\}$, otherw. (nonempt.) limit\\
+Class: def. by formula.\\
+Transf. ind: least in $C\subseteq On$\\
+Transf. rec: $\forall F\exists G\,G(\alpha)=F(G\upharpoonright\alpha)$\\
+$\alpha+0=\alpha$, $\alpha+S\beta=S(\alpha+\beta)$, $\alpha+\beta=\sup\{\alpha+\gamma|\gamma<\beta\}$
+Same for $\cdot$, power.\\
+not comm., assoc. $=type(\alpha\times\{0\}\cup\beta\times\{1\})$\\
 \subsection*{Extension by Definition \&\\ Conservative Extension}
+Added symbols.\\
+Ext. by def.: seq. of langs, adding a symbol and formula.\\
+Cons. ext.: $F'\vdash \varphi\Leftrightarrow F\vdash\varphi$, $\phi$ from L\\
+Ext. by def $\Rightarrow$ Cons. ext.
 \subsection*{Axiom of Choice}
+Choice function: $f\colon I\to \bigcup\limits_{i\in I}A_i$, $A_i\neq\varnothing$, $f(i)\in A_i$\\
+Part. Ord.: $X\neq\varnothing$, $x\leqslant x$, $x\leqslant y\leqslant x\Rightarrow y=x$, trans.\\
+Chain: all comparable, Antichain: $x\leqslant y\Rightarrow x=y$\\
+Ind. PO: $\exists x\in X\forall y\in C y\leqslant x$\\
+Zorn: for X-Ind.PO: $\exists x\in X\forall y\in X x\leqslant y\rightarrow x=y$\\
+Zeremelo: every set can be WO\\
+AC$\Leftrightarrow$ Zorn $\Leftrightarrow$ Zerem.\\
+
 \subsection*{Cardinals}
+$\simeq$: bijection, $\lesssim$: inj., $\lnsim$: $A\lesssim B\wedge B\not\lesssim A$\\
+Cantor: $A\lesssim B\wedge B\lesssim A\Rightarrow A\simeq B$\\
+ZFC. $|A|=\inf\{\alpha\in On|\alpha\simeq A\}$. Cardinal $\Leftrightarrow \alpha=|\alpha|$\\
+$|\alpha|\leqslant \beta\leqslant \alpha\rightarrow |\alpha|=|\beta|$. $n\not\simeq n+1$.\\
+Infinite: $|A|\not<\omega$. $\sup A$ card if $\alpha\in A$ card.\\
+$|\alpha|=\alpha>\omega$ limit ordinal\\
+$P(A)=\{B|B\subseteq A\}$ set by axiom\\
+Cantor: $A\lnsim P(A)$.\\
+Succ. card: $\forall\alpha\exists\alpha^+=\beta(\alpha<\beta\wedge|\beta|=\beta)$\\
+Limit card: not succ and $\kappa>\omega$.\\
+$\aleph_0=\omega$, $\aleph_{\alpha+1}=\aleph_{\alpha}^+$, $\aleph_\alpha=\sup\{\aleph_{\beta}|\beta<\alpha\}$\\
+$<\Rightarrow\aleph_\alpha<\aleph_\beta$, inf.cards=all $\aleph$s\\
+$\aleph_\alpha$ lim/succ card $\Leftrightarrow$ $\alpha$ limit/succ ord.\\
+$\kappa+\lambda=|\kappa\times\{0\}\cup\lambda\times\{1\}|$\\
+$\kappa\cdot\lambda=|\kappa\times\lambda|$. $\kappa^\lambda=|^\lambda\kappa|$. $\kappa\cdot\kappa=\kappa$\\
+int. on $\omega$. Othws. $\lambda+\kappa=\max\{\lambda,\kappa\}$,\\
+$\lambda\cdot \kappa=0$ or $\max\{\lambda,\kappa\}$.
+ZFC: inj $\Rightarrow |A|\leqslant |B|$. Surj. $\Rightarrow$
+
 \subsection*{Well-Founded Sets}
 \subsection*{Axiom of Foundation}
 \subsection*{Relativization from inside a class}
