@@ -1,18 +1,29 @@
-\documentclass[twocolumn]{article}
-\usepackage[a4paper, margin=0.5in]{geometry}
+\documentclass[9pt]{article}
+\usepackage{multicol}
+\usepackage[a4paper, margin=0.3in]{geometry}
+\usepackage[utf8]{inputenc}
 \usepackage{blindtext}
 \usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{xcolor}
 \usepackage{amssymb}
-\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\newcommand{\class}[1]{{\bf #1}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\code}[1]{{\color{blue}\lceil#1\rceil}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\underlabel}[2]{\underset{\mbox{\small #2}}{\underbrace{#1}}}
+\newcommand{\eqdef}{\overset{\mbox{\small{def}}}{=}}
+\newcommand{\mytitle}[1]{ {\bf $\rightarrow$ \underline{#1}}\\}
 
 \begin{document}
 \begin{center}
 	{\large Set Theory Cheatsheet}\\
 	by Sergei Volodin
 \end{center}
-\subsection*{Axioms}
+\mytitle{Axioms}
 0 Existence: $\exists x\, x=x$\\
-1 Extensionality: $\forall x\,\forall y\,\left(\forall z \left(z\in x\to z\in y\right)\to x=y \right)$\\
+1 Extensionality: $\color{red}\forall x\,\forall y\,\left(\forall z \left(z\in x\to z\in y\right)\to x=y \right)$\\
 2 Comprehension: $\forall z\,\forall \vec{w}\,\exists y\,\exists x\left(x\in y\leftrightarrow \left(z\in z \wedge\varphi\right)\right)$\\
 $\varphi=\varphi(x,z,\vec{w})$\\
 3 Pairing: $\forall x\,\forall y\,\exists z\,\left(x\in z\wedge y\in z\right)$\\
@@ -21,17 +32,18 @@ $\varphi=\varphi(x,z,\vec{w})$\\
 6 Power: $\forall x\,\exists y\,\forall z\left(\forall u(u\in z\to u\in z)\to z\in y\right)$\\
 7 Foundation: $\forall x\left(\exists y\,y\in x\to\exists y(y\in x\wedge \neg \exists z(z\in x\wedge z\in y))\right)$\\
 8 Replacement: $\forall A\,\forall\vec{w}\left[\forall x(x\in A\to\exists !y\varphi)\to\exists B\,\forall x(x\in A\to \exists y(y\in B\wedge \varphi))\right]$\\
-9 Choice: $\forall x\left(\left\{\forall y(y\in x\exists z z\in y)\wedge \forall y\forall y'\left[y\in x\wedge y'\in x\wedge \exists z (z\in y\wedge z\in y')\right]\to y=y'\right\}\to\exists c\forall y(y\in x\to\exists !z(z\in y\wedge z\in c))\right)$
-\subsection*{Well-orderings}
+9 Choice: $\forall x \left\{\forall y(y\in x\exists z z\in y)\wedge \forall y\forall y'\left[y\in x\wedge y'\in x\wedge \exists z (z\in y\wedge z\in y')\right]\to y=y'\right\}$ $\to\exists c\forall y(y\in x\to\exists !z(z\in y\wedge z\in c))$
+\begin{multicols*}{2}
+\mytitle{Well-orderings}
 $(A,R)$ ordering: $\forall x,y,z\in A\left((xRy\wedge yRz)\to xRz\right)$,
 $\forall x\in A\neg xRx$.\\
 Total: +$\forall x,y\in A\left(x\neq y\to(xRy\vee yRx)\right)$.
 Isomorph.: preserv. order\\
 $(A,<)$ WO: tot+$\forall B\subseteq A\left(B\neq \varnothing\to \exists x\in B\forall y\in B\,y\nless x\right)$\\
 $\lceil \frac{x}{\,}\rceil_A^<=\{y\in A|y<x\}\not\approx (A,<)$ is WO.\\
-$(A,<_A),\,(B,<_B)$ WO, then $\approx$, $\lceil \frac{x}{\,}\rceil_A^<\approx B$ or $\lceil \frac{x}{\,}\rceil_B^<\approx A$\\
+$(A,<_A),\,(B,<_B)$ WO, then $\approx$, $\lceil \frac{x}{\,}\rceil_A^<\approx B$ or $\lceil \frac{x}{\,}\rceil_B^<\approx A$
 
-\subsection*{Ordinals}
+\mytitle{Ordinals}
 A trans.: $\forall x x\in A\to x\subseteq A$\\
 Ordinal $\Leftrightarrow$ WO+trans.\\
 $x\in \alpha\Rightarrow x\in On,\,x=\{x>y\in \alpha\}$\\
@@ -43,22 +55,24 @@ Transf. ind: least in $C\subseteq On$\\
 Transf. rec: $\forall F\exists G\,G(\alpha)=F(G\upharpoonright\alpha)$\\
 $\alpha+0=\alpha$, $\alpha+S\beta=S(\alpha+\beta)$, $\alpha+\beta=\sup\{\alpha+\gamma|\gamma<\beta\}$
 Same for $\cdot$, power.\\
-not comm., assoc. $=type(\alpha\times\{0\}\cup\beta\times\{1\})$\\
-\subsection*{Extension by Definition \&\\ Conservative Extension}
+not comm., assoc. $=type(\alpha\times\{0\}\cup\beta\times\{1\})$
+
+\mytitle{Extension by Def. \&\\ Cons. Extension}
 Added symbols.\\
 Ext. by def.: seq. of langs, adding a symbol and formula.\\
 Cons. ext.: $F'\vdash \varphi\Leftrightarrow F\vdash\varphi$, $\phi$ from L\\
 Ext. by def $\Rightarrow$ Cons. ext.
-\subsection*{Axiom of Choice}
+
+\mytitle{Axiom of Choice}
 Choice function: $f\colon I\to \bigcup\limits_{i\in I}A_i$, $A_i\neq\varnothing$, $f(i)\in A_i$\\
 Part. Ord.: $X\neq\varnothing$, $x\leqslant x$, $x\leqslant y\leqslant x\Rightarrow y=x$, trans.\\
 Chain: all comparable, Antichain: $x\leqslant y\Rightarrow x=y$\\
 Ind. PO: $\exists x\in X\forall y\in C y\leqslant x$\\
 Zorn: for X-Ind.PO: $\exists x\in X\forall y\in X x\leqslant y\rightarrow x=y$\\
 Zeremelo: every set can be WO\\
-AC$\Leftrightarrow$ Zorn $\Leftrightarrow$ Zerem.\\
+AC$\Leftrightarrow$ Zorn $\Leftrightarrow$ Zerem.
 
-\subsection*{Cardinals}
+\mytitle{Cardinals}
 $\simeq$: bijection, $\lesssim$: inj., $\lnsim$: $A\lesssim B\wedge B\not\lesssim A$\\
 Cantor: $A\lesssim B\wedge B\lesssim A\Rightarrow A\simeq B$\\
 ZFC. $|A|=\inf\{\alpha\in On|\alpha\simeq A\}$. Cardinal $\Leftrightarrow \alpha=|\alpha|$\\
@@ -76,15 +90,73 @@ $\kappa+\lambda=|\kappa\times\{0\}\cup\lambda\times\{1\}|$\\
 $\kappa\cdot\lambda=|\kappa\times\lambda|$. $\kappa^\lambda=|^\lambda\kappa|$. $\kappa\cdot\kappa=\kappa$\\
 int. on $\omega$. Othws. $\lambda+\kappa=\max\{\lambda,\kappa\}$,\\
 $\lambda\cdot \kappa=0$ or $\max\{\lambda,\kappa\}$.
-ZFC: inj $\Rightarrow |A|\leqslant |B|$. Surj. $\Rightarrow$
+ZFC: inj $\Rightarrow |A|\leqslant |B|$. Surj. $\Rightarrow$ $|A|\geqslant |B|$.\\
+$\lambda^\kappa=2^\kappa=|P(\kappa)|$.\\
+$|\bigcup\limits_{\alpha\leqslant \kappa}A_\alpha|\leqslant\kappa$, $|A_\alpha|\leqslant\kappa$\\
+$A$ unb. in $\alpha$ $\Leftrightarrow$ $\forall\gamma\in\alpha\exists\delta\in A\delta\geqslant\gamma$ $\Leftrightarrow$ $S\alpha\in A$ or $\sup A=\alpha$\\
+$f\colon\beta\to\alpha$ cof. if $ran(f)$ unb. in $\alpha$\\
+$cof(\alpha)$ least $\beta$ $\exists f\overset{cof.}{\to}\alpha$\\
+$\kappa$ reg. $cof(\kappa)=\kappa$ oth. sing.\\
+$\kappa^+$ reg., $\kappa^{cof(\kappa)}>\kappa$, $cof(2^\kappa)>\kappa$.
+CH: $2^{\aleph_0}=\aleph_1$. GCH: $\forall\alpha 2^{\aleph_\alpha}=\aleph_{\alpha+1}$\\
+$\kappa$ weak. incs. if reg. and limit; str. if reg and $\forall\lambda<\kappa 2^\lambda<\kappa$\\
 
-\subsection*{Well-Founded Sets}
-\subsection*{Axiom of Foundation}
-\subsection*{Relativization from inside a class}
-\subsection*{The Mostowski Collapse}
-\subsection*{Preservation under Relativization}
-\subsection*{Arithmetic and Recursivity}
-\subsection*{Undecidability Results}
-\subsection*{G\"odel's Constructible Universe}
-\subsection*{Forcing}
+\mytitle{Well-Founded Sets}
+$W(0)=\varnothing$, $W(\alpha+1)=P(W(\alpha))$, $W(\alpha)=\bigcup\limits_{\xi<\alpha}W(\xi)$, $WF=\bigcup\limits_{On}W(\alpha)$\\
+$rk(x)=$ least $\alpha\colon x\in W(\alpha+1)$. $W(\alpha)=\{x\in WF|rk(x)<\alpha\}$. $\forall x\in y (x\in WF\wedge rk(x)<rk(y)$\\
+$rk(y)=\sup\{rk(x)+1|x\in y\}$. Sequence: $s\colon\alpha\to A$, $s^\smallfrown t\colon \alpha+\beta\to A\cup B$.
+DC: $\forall A\forall T\subseteq A^{<\omega} T n.e.p. \to \exists b\in A^\omega \forall n\in\omega b\upharpoonright n\in T$. $AC\to DC\to CC$\\
+$\not\exists x_0\ni x_1\ni x_2...$\\ $On\subseteq WF$, $rk(\alpha)=\alpha$, $W(\alpha)\cap On=\alpha$. $y\in WF\to y\subseteq WF$. $<$ WF on A $\Leftrightarrow$ $\forall B\subseteq A B\neq \varnothing\to\exists y\in B\forall x\in B x\nless y$. $A\in WF\Rightarrow \in$ w.f. on A. $A$ trans. and $\in$-w.f. $\Rightarrow A\in WF$.\\
+$\bigcup^0A=A,\bigcup^{n+1}A=\bigcup\bigcup^{n}A,tc(A)=\bigcup\{\bigcup^n A|n\in\omega\}$ is $\subseteq$-least trans. cont. A.
+
+\mytitle{Axiom of Foundation}
+Foundation $\Leftrightarrow$ $\in$ w.f. $\forall x$ $\Leftrightarrow$ $V=WF$
+
+\mytitle{Relativization from inside a class}
+$(\exists x \varphi)^M=\exists x\in M(\varphi)^M$, $(\forall x \varphi)^M=\forall x\in M(\varphi)^M$. $\vdash\varphi$ $\Rightarrow$ $\vdash\varphi^M$
+
+\mytitle{The Mostowski Collapse}
+$R$ set-like on $M$ $\Leftrightarrow$ $\forall y\in M R^{-1}[y]=\{x\in M|xRy\}$ set.\\
+$cl^0(\lceil\frac{x}{}\rceil^R_X)=X\cap R^{-1}[z]$, $cl^{n+1}=\bigcup\{\lceil\frac{z}{}\rceil^R_X|z\in cl^n\}$, $cl=\bigcup \{cl^n|n\in\omega\}$\\
+$R$ w.f. on M $\Leftrightarrow$ $\forall X\subseteq M X\neq\varnothing\to\exists y\in x\forall z\in x \neg zRy$.
+$\forall\class{X}\subseteq\class{M} \class{X}\neq\varnothing\to\exists y\in\class{X}\forall x\in\class{X}\neg xRy$\\
+$\class{G}(x)=\{\class{G}(y)|y\in\class{M}\wedge y\class{R}x\}$. Most. coll. $\class{G}[\class{M}]$. $x\class{R}y\to \class{G}(x)\in\class{G}(y)$, $N$ trans., $N\subseteq WF$
+
+\mytitle{Preservation under Relativization}
+Prop. of class $\Rightarrow$ axioms in class.\\
+$\class{M}$ trans. $\Rightarrow$ Extensionality$^M$
+
+\mytitle{Absoluteness}
+$\varphi$ abs. for $\class{M}\subseteq\class{N}$ $\Leftrightarrow$ $\forall x_1\in M...\forall x_n\in M \varphi^M\leftrightarrow\varphi^N$.\\
+$\varphi$ abs. for $M$ if abs. for $\class{M}, \class{V}$.
+$\class{M}$ trans. then rud. form. abs.
+
+\mytitle{Arithmetic and Recursivity}
+$f\colon \N^p\supseteq dom_f\to \N$. Part. and tot.\\
+Part. rec: const., proj.,$S$, compos., rec., min. $\Leftrightarrow$ Tur.-comp.\\
+Prim. rec: same but min.\\
+Robinson: $L=\{0,S,+,\cdot\}$, $\forall x Sx\neq 0$, $\forall x\exists y (x\neq 0\to Sy=x)$, $\forall x \forall y (Sx=Sy\to x=y)$, $\forall x x+0=x$, $\forall x\forall y (x+Sy=S(x+y))$, $\forall x x\cdot 0=0$, $\forall x\forall y X\cdot Sy=(x\cdot y)+x$.
+$\phi$ repr. func. $f$ $\Leftrightarrow$ Rob$\vdash f(\vec{x})=x_0\Leftrightarrow\phi(x_0,\vec{x})$. $\phi$ repr. set $\Leftrightarrow$ $\vdash\phi$ or $\vdash\neg\phi$. Coding seqs of ints. Coding formulas. Coding proofs.
+
+\mytitle{Undecidability Results}
+$T$ rec. if $\{\code{\varphi}|\varphi\in T\}$ is rec. Dec. if $thms(T)=\{\code{\varphi}|T\vdash\varphi\}$ is rec.\\
+$\{(\code{P},\code{\phi})|P\,is\,proof\,of\,T\vdash\phi\}$\\
+prim. rec if T prim. rec., rec. if T rec.
+
+$\{\code{\phi}|\vdash\phi\}$ not rec.\\
+$T\supseteq Rob$ cons. $\Leftrightarrow$ undec.; cons+rec $\Rightarrow$ incompl. (1st incompl.)\\
+Peano: +Ind: $\forall \vec{x}\phi_{[0/x_0]}\wedge\forall x_0(\phi\to \phi_{[Sx_0/x_0]})\to\forall x_0\phi$\\
+Arithm. hier. $I\Sigma_1^0$.
+
+2nd inc. by big formula proof.
+\mytitle{G\"odel's Constructible Universe}
+$X$ def over $Y$: $X=\{y\in Y|\varphi(x,a_1/x_1,...,a_n/x_n)^Y\}$\\
+Definability with codes. Constructible sets $\class{L}$
+
+Refl.: $ZF\vdash \forall\alpha\exists\beta>\alpha \phi_0,...,\phi_n\,abs.\,for \class{L}(\beta),\,\class{L}$\\
+$ZF\vdash (AC)^{\class{L}}$, $ZF\vdash V=L\to AC, GCH$.
+Inner model $\class{M}$: trans., $\class{On}\cap\class{M}=\class{On}\cap\class{V}$, $(ZFC)^\class{M}$
+
+\mytitle{Forcing}
+\end{multicols*}
 \end{document}
