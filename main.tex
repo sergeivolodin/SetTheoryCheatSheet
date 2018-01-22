@@ -178,6 +178,25 @@ $\class{M}$ count., $\Pp$ poset, $p\in \Pp$ $\Rightarrow$ $\exists G$ $\Pp$-gen.
 $\class{M}$ c.t.m. "ZFC", $\Pp\in M\class{M}$ forcing, $\forall p\in\Pp\exists r,q\in\Pp (q\leqslant p\wedge r\leqslant p\wedge q\bot r)$. $G$ $\Pp$-gen. ov. $\class{M}$ $\Rightarrow$ $G\not\in\class{M}$
 $\tau$ -- $\Pp$-name $\tau$ bin.rel, $\forall (\sigma,p)\in\tau$, $\sigma$ $\Pp$-name, $p\in\Pp$\\
 $\V^\Pp=\{\Pp-names\}$. $\class{M}$ trans. "ZFC" $\Rightarrow \class{M}^\Pp\eqdef \class{M}\cap\V^\Pp=\{\tau\in\class{M}|(\tau\,is\,a\,\Pp-name)^\class{M}\}$\\
-Extension: $(\tau)_G=\{(\sigma)_G|\exists p\in G(\sigma,p)\in\tau\}$. $\class{M}$ trans. "ZFC", $\Pp\in\class{M}$, $G\subseteq \Pp$ filter. $\class{M}[G]=\{(\tau)_G|\tau\in\class{M}^\Pp\}$
+Extension: $(\tau)_G=\{(\sigma)_G|\exists p\in G(\sigma,p)\in\tau\}$. $\class{M}$ trans. "ZFC", $\Pp\in\class{M}$, $G\subseteq \Pp$ filter. $\class{M}[G]=\{(\tau)_G|\tau\in\class{M}^\Pp\}$\\
+$\check{x}=\{(\check{y},\mathbb{1})|y\in x\}$, $\Gamma=\{(\check{p},p)|p\in\Pp\}$. $(\check{x})_G=x$, $(\Gamma)_G=G$.\\
+$\class{M}\subseteq\class{M}[G]$, $G\in\class{M}[G]$. $\class{M}[G]$ trans., if $\class{N}$ t.m. "ZFC" $
+\class{M}\subseteq\class{N}$, $G\in\class{N}$, then $\class{M}[G]\subseteq \class{N}$.\\
+$\On^\class{M}=\On^{\class{M}[G]}$\\
+$E$ is dense below $p\in\Pp$ iff $\forall q\leqslant p\exists r\in E\,r\leqslant q$\\
+$\class{M}$ c.t.m. of "ZFC", $\Pp\in\class{M}$, $\varphi$, $\tau_1,...,\tau_n\in\class{M}^\Pp$, $p\in\Pp$. p forces $\varphi$ ($p\models_{\Pp,\class{M}}\varphi(\tau_1,...,\tau_n)$) if $\forall G$ $\Pp$-gen. over $\class{M}$ $p\in G$ holds $\class{M}[G]\models\varphi((\tau_1)_G,...,(\tau_n)_G)$\\
+Defining $\models_*\colon \left(p\models_{\Pp,\class{M}}\varphi(\tau)\Leftrightarrow (p\models_*\varphi(\tau))^\class{M}\right)$\\
+$(\pi_1,\pi_2)\prec (\tau_1,\tau_2)\Leftrightarrow \pi_1\in dom(\tau_1),\,\pi_2\in dom(\tau_2)$ is w.f.\\
+$p\models_*\tau_1=\tau_2$ iff\begin{enumerate}
+	\item $\forall (\pi_1,s_1)\in\tau_1$ $D_\alpha(\pi_1,s_1,\tau_2)=\{q\in\Pp|q\leqslant s_1\to \exists(\pi_2,s_2)\in\tau_2\,q\leqslant s_2\wedge q\models_*\pi_1=\pi_2\}$ dense below b
+	\item $\forall(\pi_2,s_2)\in\tau_2$ $D_\beta(pi_2,s_2)$ dense below $p$
+\end{enumerate}
+$p\models_*\tau_1\in\tau_2$ iff $\{q\in \Pp|\exists (\pi,s)\in\tau_2\,q\leqslant s\wedge q\models_* \pi=\tau_1\}$\\
+$p\models_*\varphi\wedge\psi$ iff $p\models_*\varphi$ and $p\models_*\psi$\\
+$p\models_*\neg\varphi$ iff $\forall q\leqslant p\,q\not\models_*\varphi$\\
+$p\models_*\exists x\varphi(x,...)$ iff $\{q\in \Pp|\exists \sigma\in\V^\Pp,q\models_*\varphi(\sigma,...)\}$ dense below $p$\\
+$p\models_*\varphi(\tau_1,...,\tau_n)$ $\Leftrightarrow$ $\forall r\leqslant p\,r\models_*\varphi(...)$ $\Leftrightarrow$ $\{r\in\Pp|r\models_*\varphi(...)\}$ dense below $p$.\\
+Truth lemma: $\varphi(x_1,...,s_n)\in L_{ST}\,\class{M}$ is c.t.m. of "ZFC", $\Pp$ forc. on $\class{M}$, $\tau_1,...,\tau_n\in\class{M}^\Pp$, $G$ $\Pp$-gen. over $\class{M}$ $\class{M}[G]\models \varphi((\tau_1)_G,...,(\tau_n)_G)\Leftrightarrow\exists p\in G(p\models_*\varphi(\tau_1,...,\tau_n))^M$\\
+also $\class{M}[G]\models "ZFC"$.
 \end{multicols*}
 \end{document}
