@@ -3,6 +3,7 @@
 \usepackage[a4paper, margin=0.3in]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{blindtext}
+\usepackage{bbold}
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{xcolor}
@@ -10,11 +11,14 @@
 \usepackage{parskip}
 \newcommand{\class}[1]{{\bf #1}}
 \newcommand{\N}{\mathbb{N}}
+\newcommand{\Pp}{\mathbb{P}}
 \newcommand{\code}[1]{{\color{blue}\lceil#1\rceil}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\underlabel}[2]{\underset{\mbox{\small #2}}{\underbrace{#1}}}
 \newcommand{\eqdef}{\overset{\mbox{\small{def}}}{=}}
 \newcommand{\mytitle}[1]{ {\bf $\rightarrow$ \underline{#1}}\\}
+\newcommand{\On}{\class{On}}
+\newcommand{\V}{\class{V}}
 
 \begin{document}
 \begin{center}
@@ -158,5 +162,22 @@ $ZF\vdash (AC)^{\class{L}}$, $ZF\vdash V=L\to AC, GCH$.
 Inner model $\class{M}$: trans., $\class{On}\cap\class{M}=\class{On}\cap\class{V}$, $(ZFC)^\class{M}$
 
 \mytitle{Forcing}
+Want prove: $Cons(ZFC)\Rightarrow Cons(ZFC+\neg CH)$.
+Method: $ZFC+\neg CH\vdash\bot\Rightarrow\exists \Phi_1,...,\Phi_n$ in $+\neg CH$, $\Phi_1,...,\Phi_n\vdash \Phi \wedge\neg\Phi$.
+Forcing $\Rightarrow$ $ZFC\vdash\exists\class{N}(\Phi_1^\class{N}\wedge...\wedge\Phi_n^\class{N})$, then $ZFC\vdash \Phi^\class{N}\wedge\neg\Phi^\class{N}$, then $ZFC\wedge\bot$\\
+Forcing: $\Psi_1,...,\Psi_k\vdash \exists\class{N}(\Phi_1^\class{N}\wedge...\wedge\Phi_n^\class{N})$.\\
+$\forall \{\Psi_1,...,\Psi_k\}$ consider c.t.m. $\class{M}$ (refl.) $\class{M}\models \Psi_1\wedge...\wedge\Psi_k$, forcing: $\class{N}=\class{M}[\class{G}]\models\Phi_1\wedge...\wedge\Phi_n$\\
+
+Montague's refl. princ.: $\phi_0,...,\phi_n\in L_{ST}$. $ZF\vdash \forall\alpha\in\On\exists\beta>\alpha \,"\phi_0,...,\phi_n\,abs.\,for\,\V(\beta)$. count. trans. mod. of "ZFC": c.t.m. of suff. large n. of axioms of ZFC\\
+Forcing: poset $(\mathbb{P}, \leqslant)$ or $(\mathbb{P}, \leqslant,\mathbb{1})$. $p\in \Pp$ condition, $p\leqslant q$ p stronger q.\\
+Poset: $p,q$ compat. $\exists r\in \Pp$ $r\leqslant p, q$, oth. $p\bot q$\\
+Antichain: all incomp., $D\subseteq \Pp$ dense $\forall p\Pp\exists q\in D q\leqslant p$\\
+Filter: $G\subseteq \Pp$, $\forall p, q\in G\exists r\in G r\leqslant p, q$ and $\forall p\in G,\,q\in \Pp\,p\leqslant q\rightarrow q\in G$
+$G\subseteq \Pp$ is $\Pp$-generic over $\class{M}$: filter+$\forall D\subseteq \Pp (D\mbox{ dense}\wedge D\in\class{M})\rightarrow D\cap G\neq \varnothing$\\
+$\class{M}$ count., $\Pp$ poset, $p\in \Pp$ $\Rightarrow$ $\exists G$ $\Pp$-gen. ov. $\class{M}$ $p\in G$\\
+$\class{M}$ c.t.m. "ZFC", $\Pp\in M\class{M}$ forcing, $\forall p\in\Pp\exists r,q\in\Pp (q\leqslant p\wedge r\leqslant p\wedge q\bot r)$. $G$ $\Pp$-gen. ov. $\class{M}$ $\Rightarrow$ $G\not\in\class{M}$
+$\tau$ -- $\Pp$-name $\tau$ bin.rel, $\forall (\sigma,p)\in\tau$, $\sigma$ $\Pp$-name, $p\in\Pp$\\
+$\V^\Pp=\{\Pp-names\}$. $\class{M}$ trans. "ZFC" $\Rightarrow \class{M}^\Pp\eqdef \class{M}\cap\V^\Pp=\{\tau\in\class{M}|(\tau\,is\,a\,\Pp-name)^\class{M}\}$\\
+Extension: $(\tau)_G=\{(\sigma)_G|\exists p\in G(\sigma,p)\in\tau\}$. $\class{M}$ trans. "ZFC", $\Pp\in\class{M}$, $G\subseteq \Pp$ filter. $\class{M}[G]=\{(\tau)_G|\tau\in\class{M}^\Pp\}$
 \end{multicols*}
 \end{document}
