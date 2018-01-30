@@ -20,9 +20,11 @@
 \newcommand{\On}{\class{On}}
 \newcommand{\V}{\class{V}}
 \newcommand{\M}{\class{M}}
+\newcommand{\Ll}{\class{L}}
 \newcommand{\Rr}{\class{R}}
 \newcommand{\WF}{\class{WF}}
 \newcommand{\X}{\class{X}}
+\newcommand{\Def}{\mbox{Def}}
 
 \begin{document}
 \begin{center}
@@ -52,8 +54,7 @@ Total: +$\forall x,\,y\in A\left(x\neq y\to(xRy\vee yRx)\right)$.
 Isomorph.: preserv. order\\
 $(A,<)$ WO: tot+$\forall B\subseteq A\left(B\neq \varnothing\to \exists x\in B\,\forall y\in B\,y\nless x\right)$\\
 $\lceil \frac{x}{\,}\rceil_A^<=\{y\in A|y<x\}\not\approx (A,<)$ is WO.\\
-$(A,<_A),\,(B,<_B)$ WO, then $\approx$, $\lceil \frac{x}{\,}\rceil_A^<\approx B$ or $\lceil \frac{x}{\,}\rceil_B^<\approx A$
-
+$(A,<_A),\,(B,<_B)$ WO, then $\approx$, $\lceil \frac{x}{\,}\rceil_A^<\approx B$ or $\lceil \frac{x}{\,}\rceil_B^<\approx A$\\
 \mytitle{Ordinals}
 A trans.: $\forall x\in A\to x\subseteq A$\\
 Ordinal $\Leftrightarrow$ WO+trans.\\
@@ -66,14 +67,12 @@ Transf. ind: least in $C\subseteq \On$\\
 Transf. rec: $\forall F\,\exists G\,G(\alpha)=F(G\upharpoonright\alpha)$\\
 $\alpha+0=\alpha$, $\alpha+S\beta=S(\alpha+\beta)$, $\alpha+\beta=\sup\{\alpha+\gamma|\gamma<\beta\}$
 Same for $\cdot$, power.\\
-not comm., assoc. $=type(\alpha\times\{0\}\cup\beta\times\{1\})$
-
+not comm., assoc. $=type(\alpha\times\{0\}\cup\beta\times\{1\})$\\
 \mytitle{Extension by Def. \& Cons. Extension}
 Added symbols.\\
 Ext. by def.: seq. of langs, adding a symbol and formula.\\
 Cons. ext.: $F'\vdash \varphi\Leftrightarrow F\vdash\varphi$, $\phi$ from L\\
-Ext. by def $\Rightarrow$ Cons. ext.
-
+Ext. by def $\Rightarrow$ Cons. ext.\\
 \mytitle{Axiom of Choice}
 Choice function: $f\colon I\to \bigcup\limits_{i\in I}A_i$, $A_i\neq\varnothing$, $f(i)\in A_i$\\
 Part. Ord.: $X\neq\varnothing$, $x\leqslant x$, $x\leqslant y\leqslant x\Rightarrow y=x$, trans.\\
@@ -81,8 +80,7 @@ Chain: all comparable, Antichain: $x\leqslant y\Rightarrow x=y$\\
 Ind. PO: $\exists x\in X\,\forall y\in C y\leqslant x$\\
 Zorn: for X-Ind.PO: $\exists x\in X\,\forall y\in X x\leqslant y\rightarrow x=y$\\
 Zeremelo: every set can be WO\\
-\class{AC}$\Leftrightarrow$ Zorn $\Leftrightarrow$ Zerem.
-
+\class{AC}$\Leftrightarrow$ Zorn $\Leftrightarrow$ Zerem.\\
 \mytitle{Cardinals}
 $\simeq$: bijection, $\lesssim$: inj., $\lnsim$: $A\lesssim B\wedge B\not\lesssim A$\\
 Cantor: $A\lesssim B\wedge B\lesssim A\Rightarrow A\simeq B$\\
@@ -101,7 +99,7 @@ $\kappa+\lambda=|\kappa\times\{0\}\cup\lambda\times\{1\}|$\\
 $\kappa\cdot\lambda=|\kappa\times\lambda|$. $\kappa^\lambda=|^\lambda\kappa|$. $\kappa\cdot\kappa=\kappa$\\
 int. on $\omega$. Othws. $\lambda+\kappa=\max\{\lambda,\kappa\}$,\\
 $\lambda\cdot \kappa=0$ or $\max\{\lambda,\kappa\}$.
-ZFC: inj $\Rightarrow |A|\leqslant |B|$. Surj. $\Rightarrow$ $|A|\geqslant |B|$.\\
+$\class{ZFC}$: inj $\Rightarrow |A|\leqslant |B|$. Surj. $\Rightarrow$ $|A|\geqslant |B|$.\\
 $\lambda^\kappa=2^\kappa=|P(\kappa)|$.\\
 $|\bigcup\limits_{\alpha\leqslant \kappa}A_\alpha|\leqslant\kappa$, $|A_\alpha|\leqslant\kappa$\\
 $A$ unb. in $\alpha$ $\Leftrightarrow$ $\forall\gamma\in\alpha\,\exists\delta\in A\delta\geqslant\gamma$ $\Leftrightarrow$ $S\alpha\in A$ or $\sup A=\alpha$\\
@@ -111,22 +109,18 @@ $\kappa$ reg. $cof(\kappa)=\kappa$ oth. sing.\\
 $\kappa^+$ reg., $\kappa^{cof(\kappa)}>\kappa$, $cof(2^\kappa)>\kappa$.
 CH: $2^{\aleph_0}=\aleph_1$. $\class{GCH}$: $\forall\alpha 2^{\aleph_\alpha}=\aleph_{\alpha+1}$\\
 $\kappa$ weak. incs. if reg. and limit; str. if reg and $\forall\lambda<\kappa 2^\lambda<\kappa$\\
-$|\R|=2^{\aleph_0}=\beth_1$. $\class{GCH}$ $\Rightarrow$ str. inacc. $\Leftrightarrow$ weak. inacc.
-
+$|\R|=2^{\aleph_0}=\beth_1$. $\class{GCH}$ $\Rightarrow$ str. inacc. $\Leftrightarrow$ weak. inacc.\\
 \mytitle{Well-Founded Sets}
-$W(0)=\varnothing$, $W(\alpha+1)=P(W(\alpha))$, $W(\alpha)=\bigcup\limits_{\xi<\alpha}W(\xi)$, $\WF=\bigcup\limits_{\On}W(\alpha)$\\
+$W(0)=\varnothing$, $W(\alpha+1)=P(W(\alpha))$, $W(\alpha)=\bigcup\limits_{\xi<\alpha}W(\xi)$, $\WF=\bigcup\limits W(\alpha)$\\
 $rk(x)=$ least $\alpha\colon x\in W(\alpha+1)$. $W(\alpha)=\{x\in \WF|rk(x)<\alpha\}$. $\forall x\in y (x\in \WF\wedge rk(x)<rk(y)$\\
 $rk(y)=\sup\{rk(x)+1|x\in y\}$. Sequence: $s\colon\alpha\to A$, $s^\smallfrown t\colon \alpha+\beta\to A\cup B$.
 DC: $\forall A\,\forall T\subseteq A^{<\omega} T n.e.p. \to \exists b\in A^\omega \,\forall n\in\omega b\upharpoonright n\in T$. $\class{AC}\to DC\to CC$\\
 $\not\exists x_0\ni x_1\ni x_2...$\\ $\On\subseteq \WF$, $rk(\alpha)=\alpha$, $W(\alpha)\cap \On=\alpha$. $y\in \WF\to y\subseteq \WF$. $<$ $\WF$ on $A$ $\Leftrightarrow$ $\forall B\subseteq A B\neq \varnothing\to\exists y\in B\,\forall x\in B x\nless y$. $A\in \WF\Rightarrow \in$ w.f. on A. $A$ trans. and $\in$-w.f. $\Rightarrow A\in \WF$.\\
-$\bigcup^0A=A,\bigcup^{n+1}A=\bigcup\bigcup^{n}A,tc(A)=\bigcup\{\bigcup^n A|n\in\omega\}$ is $\subseteq$-least trans. cont. A.
-
+$\bigcup^0A=A,\bigcup^{n+1}A=\bigcup\bigcup^{n}A,tc(A)=\bigcup\{\bigcup^n A|n\in\omega\}$ is $\subseteq$-least trans. cont. A.\\
 \mytitle{Axiom of Foundation}
-Foundation $\Leftrightarrow$ $\in$ w.f. $\forall x$ $\Leftrightarrow$ $\V=\WF$
-
+Foundation $\Leftrightarrow$ $\in$ w.f. $\forall x$ $\Leftrightarrow$ $\V=\WF$\\
 \mytitle{Relativization from inside a class}
-$(\exists x \varphi)^M=\exists x\in M(\varphi)^M$, $(\forall x \varphi)^M=\forall x\in M(\varphi)^M$. $\vdash\varphi$ $\Rightarrow$ $\vdash\varphi^M$
-
+$(\exists x \varphi)^M=\exists x\in M(\varphi)^M$, $(\forall x \varphi)^M=\forall x\in M(\varphi)^M$. $\vdash\varphi$ $\Rightarrow$ $\vdash\varphi^M$\\
 \mytitle{The Mostowski Collapse}
 Goal: making class $\class{M}$ transitive.\\
 $\class{R}$ set-like on $\class{M}$ $\Leftrightarrow$ $\forall y\in \class{M} \class{R}^{-1}[y]=\{x\in \class{M}|x\class{R}y\}$ set.\\
@@ -135,88 +129,94 @@ $\Rr$ w.f. on $\class{M}$ $\Leftrightarrow$ $\forall \underline{X}\subseteq \M \
 $\forall\class{X}\subseteq\class{M} \class{X}\neq\varnothing\to\exists y\in\class{X}\,\forall x\in\class{X}\neg x\Rr y$\\
 $\class{G}(x)=\{\class{G}(y)|y\in\class{M}\wedge y\class{R}x\}$. Most. coll. $\class{G}[\class{M}]$. $x\class{R}y\to \class{G}(x)\in\class{G}(y)$, $N$ trans., $N\subseteq \WF$\\
 $\Rr$ extensional iff $\forall x\in\M\,\forall y\in\M\left(x\neq y\to \lceil\frac{x}{}\rceil^\Rr_\M \neq\lceil\frac{y}{}\rceil_\M^\Rr\right)$\\
-(ZF-AF) $\Rr$ w.f. and set-like, ext. $\Rightarrow$ $(\M,\Rr)\overset{!\class{G}}{\approx}(\class{N}=\class{G}[\M],\in)$\\
-
+(\class{ZF}-AF) $\Rr$ w.f. and set-like, ext. $\Rightarrow$ $(\M,\Rr)\overset{!\class{G}}{\approx}(\class{G}[\M],\in)$\\
 \mytitle{Preservation under Relativization}
 Prop. of class $\Rightarrow$ axioms in class.\\
-$\class{M}$ trans. $\Rightarrow$ Extensionality$^M$, $\{x\in y|\varphi^\M\}\in\M\Rightarrow$ Compr.$^M$, $P(x)\cap\M\subseteq y\in \M\Rightarrow$ Pow$^\M$, $\M\subseteq \WF\Rightarrow$ Found$^\M$
-
+$\class{M}$ trans. $\Rightarrow$ Extensionality$^M$, $\{x\in y|\varphi^\M\}\in\M\Rightarrow$ Compr.$^M$, $P(x)\cap\M\subseteq y\in \M\Rightarrow$ Pow$^\M$, $\M\subseteq \WF\Rightarrow$ Found$^\M$\\
 \mytitle{Absoluteness}
 $\varphi$ abs. for $\class{M}\subseteq\class{N}$ $\Leftrightarrow$ $\forall x_1\in M...\forall x_n\in M \varphi^M\leftrightarrow\varphi^N$.\\
 $\varphi$ abs. for $M$ if abs. for $\class{M}, \V$.
-$\class{M}$ trans. then $\Delta_0^0$-rud. form. ($\exists x(x\in y\wedge\psi)$ or $\forall x(x\in y\to\psi)$) abs.
-
+$\class{M}$ trans. then $\Delta_0^0$-rud. form. ($\exists x(x\in y\wedge\psi)$ or $\forall x(x\in y\to\psi)$) abs.\\
 \mytitle{Arithmetic and Recursivity}
 $f\colon \N^p\supseteq dom_f\to \N$. Part. and tot.\\
 Part. rec: const., proj., succ., compos., rec., min. $\Leftrightarrow$ Tur.-comp. Prim. rec: same but min.
 Robinson: $L=\{0,S,+,\cdot\}$, 1 $\forall x Sx\neq 0$, 2 $\forall x\,\exists y (x\neq 0\to Sy=x)$, 3 $\forall x \,\forall y (Sx=Sy\to x=y)$, 4 $\forall x\,x+0=x$, 5 $\forall x\,\forall y (x+Sy=S(x+y))$, 6 $\forall x\,x\cdot 0=0$, 7 $\forall x\,\forall y\,x\cdot Sy=(x\cdot y)+x$.
-$\phi$ repr. func. $f$ $\Leftrightarrow$ Rob$\vdash f(\vec{x})=x_0\Leftrightarrow\phi(x_0,\vec{x})$. $\phi$ repr. set $\Leftrightarrow$ $\vdash\phi$ or $\vdash\neg\phi$. Coding seqs of ints. Coding formulas. Coding proofs (seqnt calc.). Ex. set $\mathcal{F}_{{\color{green}\checkmark}!free}$ is prim. rec.
-
+$\phi$ repr. func. $f$ $\Leftrightarrow$ Rob$\vdash f(\vec{x})=x_0\Leftrightarrow\phi(x_0,\vec{x})$. $\phi$ repr. set $\Leftrightarrow$ $\vdash\phi$ or $\vdash\neg\phi$. Coding seqs of ints. Coding formulas. Coding proofs (seqnt calc.). Ex. set $\mathcal{F}_{{\color{green}\checkmark}!free}$ is prim. rec.\\
 \mytitle{Undecidability Results}
 $T$ rec. if $\{\code{\varphi}|\varphi\in T\}$ is rec. Dec. if $thms(T)=\{\code{\varphi}|T\vdash\varphi\}$ is rec.\\
 $\{(\code{P},\code{\phi})|P\,is\,proof\,of\,T\vdash\phi\}$\\
-prim. rec if T prim. rec., rec. if T rec.
-
+prim. rec if T prim. rec., rec. if T rec\\
+T rec $\exists A\colon fin.\,time,\,\forall x A(x)=[x\in T]$\\
 $\{\code{\phi}|\vdash\phi\}$ not rec.\\
+$T$ compl. $T\vdash P$ or $T\vdash \neg P$\\
+$T$ compl. $\Rightarrow\,T$ dec.\\
 $T\supseteq Rob$ cons. $\Leftrightarrow$ undec.; cons+rec $\Rightarrow$ incompl. (1st incompl.)\\
 Peano: +Ind: $\forall \vec{x}\phi_{[0/x_0]}\wedge\forall x_0(\phi\to \phi_{[Sx_0/x_0]})\to\forall x_0\phi$\\
-Arithm. hier. $I\Sigma_1^0$.
-
-2nd inc. by big formula proof.
-
+Arithm. hier.
+$\Delta_0^0$: atom., conj-d-n., bound. quant. $<t$\\
+$\Sigma_1^0$: $\exists\vec{x}\phi$, $\phi\in\Delta_0^0$\\
+$I(ind)\Sigma_1^0$. $\exists y(y+x=z\wedge x\neq z)$
+$f$ tot. rec. $\Rightarrow$ repr. by $\Sigma_1^0$ form.\\
+{\bf 2nd inc.} $diag(n)=\code{\phi_{\code{\phi}/x_0}}$, $\phi$ 1 free var. $\Rightarrow \phi_{diag}(x_0,x_1)$, $\Sigma_1^0\ni\Xi(x_0)=\exists x_1,x_2 \phi_{proof_T}(x_1, x_2)\wedge\phi_{diag}(x_2,x_1)$. $\mathbb{N}\models \Xi(n)\Leftrightarrow Rob.\vdash \Xi(n)$\\
+$T\supseteq Rob$ cons., rec. $T\vdash \Xi_{\code{\Xi/x_0}}\to\exists x_1 \phi_{proof_{Rob}}(x_1, \code{\Xi_{\code{\Xi/x_0}}})$ then $T\not\vdash cons(T)$\\
+$Cons(\class{ZF}/C)\Rightarrow \class{ZF}\not\vdash cons(\class{ZF}/C)$\\
 \mytitle{G\"odel's Constructible Universe}
-$X$ def over $Y$: $X=\{y\in Y|\varphi(x,a_1/x_1,...,a_n/x_n)^Y\}$\\
-Definability with codes. Constructible sets $\class{L}$
-
-Refl.: $ZF\vdash \forall\alpha\,\exists\beta>\alpha \phi_0,...,\phi_n\,abs.\,for \class{L}(\beta),\,\class{L}$\\
-$ZF\vdash (\class{AC})^{\class{L}}$, $ZF\vdash \V=\class{L}\to \class{AC}, \class{GCH}$.
-Inner model $\class{M}$: trans., $\class{On}\cap\class{M}=\class{On}\cap\V$, $(ZFC)^\class{M}$
-
+$X$ def over $Y$: $X=\{y\in Y|\varphi(x,a_1/x_1,...,a_n/x_n)^Y,\,a_i\in Y\}$\\
+Definability with codes in 1st order. Defin. subsets $\Def(Y)$\\
+Constructible sets $\class{L}$: $\L(0)=\varnothing$, $\L(\alpha+1)=\Def(\L(\alpha))$, $\L(\alpha)=\bigcup\limits_{\xi<\alpha}\L(\xi)$\\
+$Y\in\Def(Y)$, $P_{fin}\in\Def(Y)$, Y trans $\Rightarrow Y\subseteq \Def(Y)$, $\class{AC},\,|Y|\geqslant\omega\Rightarrow|\Def(Y)|=|Y|$.\\
+$rk_L(x)=\mu\alpha\in\On\,x\in \L(\alpha+1)$, $\class{AC} |\L(\alpha)|=|\alpha|$, $\L(\omega)=\V(\omega)$, $\L\cap\On=\On$\\
+$\V=\class{L}\colon \forall x\exists \alpha\,x\in\class{L}(\alpha)$, $\V=\Ll\Rightarrow P(\kappa)\subseteq\Ll(\kappa^+)$, $<_\Ll\colon \Ll\times\Ll$\\
+Refl.: $\class{ZF}\vdash \forall\alpha\,\exists\beta>\alpha\,\phi_0,...,\phi_n\,abs.\,for\, \class{L}(\beta),\,\class{L}$\\
+$X\subseteq M$. $X\prec M\Leftrightarrow$ $\forall \varphi,\,\forall a_i\in X$ $\varphi(\vec{a})^X\leftrightarrow\varphi(\vec{a})^M$\\
+$\omega<\alpha$ limit, $X\prec\Ll(\alpha)$ $\Rightarrow\exists \beta,\,(X,\in)\approx(\Ll(\beta),\in)$\\
+$\forall\alpha,\,X\subseteq \Ll(\alpha),\,\exists M,\,|M|=\sup\{\aleph_0,|X|\},\,X\subseteq M,\,M\prec\Ll(\alpha)$\\
+Inner model $\class{M}$: trans., $\class{On}\cap\class{M}=\class{On}\cap\V$, $(\class{ZFC})^\class{M}$\\
 \mytitle{Forcing}
-Want prove: $Cons(ZFC)\Rightarrow Cons(ZFC+\neg CH)$.
-Method: $ZFC+\neg CH\vdash\bot\Rightarrow\exists \Phi_1,...,\Phi_n$ in $+\neg CH$, $\Phi_1,...,\Phi_n\vdash \Phi \wedge\neg\Phi$.
-Forcing $\Rightarrow$ $ZFC\vdash\exists\class{N}(\Phi_1^\class{N}\wedge...\wedge\Phi_n^\class{N})$, then $ZFC\vdash \Phi^\class{N}\wedge\neg\Phi^\class{N}$, then $ZFC\wedge\bot$\\
+{\bf Want prove:} $Cons(\class{ZFC})\Rightarrow Cons(\class{ZFC}+\neg CH)$.
+Method: $\class{ZFC}+\neg CH\vdash\bot\Rightarrow\exists \Phi_1,...,\Phi_n$ in $+\neg CH$, $\Phi_1,...,\Phi_n\vdash \Phi \wedge\neg\Phi$.
+Forcing $\Rightarrow$ $\class{ZFC}\vdash\exists\class{N}(\Phi_1^\class{N}\wedge...\wedge\Phi_n^\class{N})$, then $\class{ZFC}\vdash \Phi^\class{N}\wedge\neg\Phi^\class{N}$, then $\class{ZFC}\wedge\bot$\\
 Forcing: $\Psi_1,...,\Psi_k\vdash \exists\class{N}(\Phi_1^\class{N}\wedge...\wedge\Phi_n^\class{N})$.\\
 $\forall \{\Psi_1,...,\Psi_k\}$ consider c.t.m. $\class{M}$ (refl.) $\class{M}\models \Psi_1\wedge...\wedge\Psi_k$, forcing: $\class{N}=\class{M}[\class{G}]\models\Phi_1\wedge...\wedge\Phi_n$\\
-
-Montague's refl. princ.: $\phi_0,...,\phi_n\in L_{ST}$. $ZF\vdash \forall\alpha\in\On\,\exists\beta>\alpha \,"\phi_0,...,\phi_n\,abs.\,for\,\V(\beta)$. count. trans. mod. of "ZFC": c.t.m. of suff. large n. of axioms of ZFC\\
-Forcing: poset $(\mathbb{P}, \leqslant)$ or $(\mathbb{P}, \leqslant,\mathbb{1})$. $p\in \Pp$ condition, $p\leqslant q$ p stronger q.\\
-Poset: $p,q$ compat. $\exists r\in \Pp$ $r\leqslant p, q$, oth. $p\bot q$\\
-Antichain: all incomp., $D\subseteq \Pp$ dense $\forall p\Pp\,\exists q\in D q\leqslant p$\\
-Filter: $G\subseteq \Pp$, $\forall p, q\in G\,\exists r\in G r\leqslant p, q$ and $\forall p\in G,\,q\in \Pp\,p\leqslant q\rightarrow q\in G$
-$G\subseteq \Pp$ is $\Pp$-generic over $\class{M}$: filter+$\forall D\subseteq \Pp (D\mbox{ dense}\wedge D\in\class{M})\rightarrow D\cap G\neq \varnothing$\\
-$\class{M}$ count., $\Pp$ poset, $p\in \Pp$ $\Rightarrow$ $\exists G$ $\Pp$-gen. ov. $\class{M}$ $p\in G$\\
-$\class{M}$ c.t.m. "ZFC", $\Pp\in M\class{M}$ forcing, $\forall p\in\Pp\,\exists r,q\in\Pp (q\leqslant p\wedge r\leqslant p\wedge q\bot r)$. $G$ $\Pp$-gen. ov. $\class{M}$ $\Rightarrow$ $G\not\in\class{M}$
-$\tau$ -- $\Pp$-name $\tau$ bin.rel, $\forall (\sigma,p)\in\tau$, $\sigma$ $\Pp$-name, $p\in\Pp$\\
-$\V^\Pp=\{\Pp-names\}$. $\class{M}$ trans. "ZFC" $\Rightarrow \class{M}^\Pp\eqdef \class{M}\cap\V^\Pp=\{\tau\in\class{M}|(\tau\,is\,a\,\Pp-name)^\class{M}\}$\\
-Extension: $(\tau)_G=\{(\sigma)_G|\exists p\in G(\sigma,p)\in\tau\}$. $\class{M}$ trans. "ZFC", $\Pp\in\class{M}$, $G\subseteq \Pp$ filter. $\class{M}[G]=\{(\tau)_G|\tau\in\class{M}^\Pp\}$\\
+{\bf Montague's refl. princ.:} $\phi_0,...,\phi_n\in L_{ST}$. $\class{ZF}\vdash \forall\alpha\in\On\,\exists\beta>\alpha \,"\phi_0,...,\phi_n\,abs.\,for\,\V(\beta)$. count. trans. mod. of "$\class{ZFC}$": c.t.m. of suff. large n. of axioms of $\class{ZFC}$\\
+{\bf Forcing:} poset $(\mathbb{P}, \leqslant)$ or $(\mathbb{P}, \leqslant,\mathbb{1})$. $p\in \Pp$ condition, $p\leqslant q$ p stronger q.\\
+$p,q$ {\bf compat.} $\exists r\in \Pp$ $r\leqslant p, q$, oth. $p\bot q$\\
+{\bf Antichain:} all incomp., $D\subseteq \Pp$ {\bf dense} $\forall p\in\Pp\,\exists q\in D\, q\leqslant p$\\
+{\bf Filter:} $G\subseteq \Pp$, $\forall p, q\in G\,\exists r\in G\, r\leqslant p, q$ and\\ $\forall p\in G,\,q\in \Pp\,p\leqslant q\rightarrow q\in G$\\
+$G\subseteq \Pp$ is {\bf $\Pp$-genrc ov.} $\class{M}$: fltr+$\forall D\subseteq \Pp (D\,dns.\wedge D\in\class{M})\rightarrow D\cap G\neq \varnothing$\\
+$\class{M}$ count., $\Pp$ poset, $p\in \Pp$ $\Rightarrow$ $\exists G$ $\Pp$-gen. ov. $\class{M},\,p\in G$\\
+$\class{M}$ c.t.m. "$\class{ZFC}$", $\Pp\in M\class{M}$ forcing, $\forall p\in\Pp\,\exists r,q\in\Pp (q\leqslant p\wedge r\leqslant p\wedge q\bot r)$. $G$ $\Pp$-gen. ov. $\class{M}$ $\Rightarrow$ $G\not\in\class{M}$\\
+$\tau$ -- {\bf $\Pp$-name} $\tau$ bin.rel, $\forall (\sigma,p)\in\tau$, $\sigma$ $\Pp$-name, $p\in\Pp$\\
+$\V^\Pp=\{\Pp-names\}$. $\class{M}$ trans. "$\class{ZFC}$" $\Rightarrow \class{M}^\Pp\eqdef \class{M}\cap\V^\Pp=\{\tau\in\class{M}|(\tau\,is\,a\,\Pp-name)^\class{M}\}$\\
+{\bf Extension:} $(\tau)_G=\{(\sigma)_G|\exists p\in G(\sigma,p)\in\tau\}$.\\
+$\class{M}$ trans. "$\class{ZFC}$", $\Pp\in\class{M}$, $G\subseteq \Pp$ fltr. $\class{M}[G]=\{(\tau)_G|\tau\in\class{M}^\Pp\}$\\
 $\check{x}=\{(\check{y},\mathbb{1})|y\in x\}$, $\Gamma=\{(\check{p},p)|p\in\Pp\}$. $(\check{x})_G=x$, $(\Gamma)_G=G$.\\
-$\class{M}\subseteq\class{M}[G]$, $G\in\class{M}[G]$. $\class{M}[G]$ trans., if $\class{N}$ t.m. "ZFC" $
-\class{M}\subseteq\class{N}$, $G\in\class{N}$, then $\class{M}[G]\subseteq \class{N}$.\\
-$\On^\class{M}=\On^{\class{M}[G]}$\\
-$E$ is dense below $p\in\Pp$ iff $\forall q\leqslant p\,\exists r\in E\,r\leqslant q$\\
-$\class{M}$ c.t.m. of "ZFC", $\Pp\in\class{M}$, $\varphi$, $\tau_1,...,\tau_n\in\class{M}^\Pp$, $p\in\Pp$. p forces $\varphi$ ($p\models_{\Pp,\class{M}}\varphi(\tau_1,...,\tau_n)$) if $\forall G$ $\Pp$-gen. over $\class{M}$ $p\in G$ holds $\class{M}[G]\models\varphi((\tau_1)_G,...,(\tau_n)_G)$\\
-Defining $\models_*\colon \left(p\models_{\Pp,\class{M}}\varphi(\tau)\Leftrightarrow (p\models_*\varphi(\tau))^\class{M}\right)$\\
+$\class{M}\subseteq\class{M}[G]$, $G\in\class{M}[G]$.\\
+$\class{M}[G]$ trans.; if $\class{N}$ t.m. "$\class{ZFC}$" $\class{M}\subseteq\class{N}$, $G\in\class{N}$, then $\class{M}[G]\subseteq \class{N}$. $\On^\class{M}=\On^{\class{M}[G]}$\\
+$E$ is {\bf dense below} $p\in\Pp$ iff $\forall q\leqslant p\,\exists r\in E\,r\leqslant q$\\
+$\class{M}$ c.t.m. of "$\class{ZFC}$", $\Pp\in\class{M}$, $\varphi$, $\tau_1,...,\tau_n\in\class{M}^\Pp$, $p\in\Pp$. p forces $\varphi$ ($p\models_{\Pp,\class{M}}\varphi(\tau_1,...,\tau_n)$) if $\forall G$ $\Pp$-gen. over $\class{M}$ $p\in G$ holds $\class{M}[G]\models\varphi((\tau_1)_G,...,(\tau_n)_G)$\\
+{\bf Def} $\Vdash_*\colon \left(p\models_{\Pp,\class{M}}\varphi(\tau)\Leftrightarrow (p\Vdash_*\varphi(\tau))^\class{M}\right)$\\
 $(\pi_1,\pi_2)\prec (\tau_1,\tau_2)\Leftrightarrow \pi_1\in dom(\tau_1),\,\pi_2\in dom(\tau_2)$ is w.f.\\
-$p\models_*\tau_1=\tau_2$ iff\begin{enumerate}
-	\item $\forall (\pi_1,s_1)\in\tau_1$ $D_\alpha(\pi_1,s_1,\tau_2)=\{q\in\Pp|q\leqslant s_1\to \exists(\pi_2,s_2)\in\tau_2\,q\leqslant s_2\wedge q\models_*\pi_1=\pi_2\}$ dense below b
-	\item $\forall(\pi_2,s_2)\in\tau_2$ $D_\beta(pi_2,s_2)$ dense below $p$
-\end{enumerate}
-$p\models_*\tau_1\in\tau_2$ iff $\{q\in \Pp|\exists (\pi,s)\in\tau_2\,q\leqslant s\wedge q\models_* \pi=\tau_1\}$\\
-$p\models_*\varphi\wedge\psi$ iff $p\models_*\varphi$ and $p\models_*\psi$\\
-$p\models_*\neg\varphi$ iff $\forall q\leqslant p\,q\not\models_*\varphi$\\
-$p\models_*\exists x\varphi(x,...)$ iff $\{q\in \Pp|\exists \sigma\in\V^\Pp,q\models_*\varphi(\sigma,...)\}$ dense below $p$\\
-$p\models_*\varphi(\tau_1,...,\tau_n)$ $\Leftrightarrow$ $\forall r\leqslant p\,r\models_*\varphi(...)$ $\Leftrightarrow$ $\{r\in\Pp|r\models_*\varphi(...)\}$ dense below $p$.\\
-Truth lemma: $\varphi(x_1,...,s_n)\in L_{ST}\,\class{M}$ is c.t.m. of "ZFC", $\Pp$ forc. on $\class{M}$, $\tau_1,...,\tau_n\in\class{M}^\Pp$, $G$ $\Pp$-gen. over $\class{M}$ $\class{M}[G]\models \varphi((\tau_1)_G,...,(\tau_n)_G)\Leftrightarrow\exists p\in G(p\models_*\varphi(\tau_1,...,\tau_n))^M$\\
-also $\class{M}[G]\models "ZFC"$.
-
+$\underline{p\Vdash_*\tau_1=\tau_2}$ iff
+1 $\forall (\pi_1,s_1)\in\tau_1$ $D_\alpha(\pi_1,s_1,\tau_2)=\{q\in\Pp|q\leqslant s_1\to \exists(\pi_2,s_2)\in\tau_2\,q\leqslant s_2\wedge q\Vdash_*\pi_1=\pi_2\}$ dense below $p$, 2 $\forall(\pi_2,s_2)\in\tau_2$ $D_\beta(\pi_2,s_2,\tau_1)$ dense below $p$.
+$\underline{p\Vdash_*\tau_1\in\tau_2}$ iff $\{q\in \Pp|\exists (\pi,s)\in\tau_2\,q\leqslant s\wedge q\Vdash_* \pi=\tau_1\}$.
+$\underline{p\Vdash_*\varphi\wedge\psi}$ iff $p\Vdash_*\varphi$ and $p\Vdash_*\psi$.
+$\underline{p\Vdash_*\neg\varphi}$ iff $\forall q\leqslant p\,q\not\Vdash_*\varphi$.
+$\underline{p\Vdash_*\exists x\varphi(x,...)}$ iff $\{q\in \Pp|\exists \sigma\in\V^\Pp,q\Vdash_*\varphi(\sigma,...)\}$ dense below $p$.
+$\underline{p\Vdash_*\varphi(\tau_1,...,\tau_n)}$ $\Leftrightarrow$ $\forall r\leqslant p\,r\Vdash_*\varphi(...)$ $\Leftrightarrow$ $\{r\in\Pp|r\Vdash_*\varphi(...)\}$ dense below $p$.\\
+{\bf Truth lemma:} $\varphi(x_1,...,s_n)\in L_{ST}\,\class{M}$ is c.t.m. of "$\class{ZFC}$", $\Pp$ forc. on $\class{M}$, $\tau_1,...,\tau_n\in\class{M}^\Pp$, $G$ $\Pp$-gen. over $\class{M}$ $\class{M}[G]\models \varphi((\tau_1)_G,...,(\tau_n)_G)\Leftrightarrow\exists p\in G(p\Vdash_*\varphi(\tau_1,...,\tau_n))^M$\\
+also $\class{M}[G]\models "\class{ZFC}"$.\\
 \mytitle{$\neg$CH}
-Define $\Pp\in\class{M}$ c.t.m. "ZFC", $\forall G$ $\Pp$-gen. over $\class{M}$, $\class{M}[G]\models\neg\class{CH}$\\
+Define $\Pp\in\class{M}$ c.t.m. "$\class{ZFC}$", $\forall G$ $\Pp$-gen. over $\class{M}$, $\class{M}[G]\models\neg\class{CH}$.
 $\Pp_{\omega_2}=\{f\colon (\omega_2)^\class{M}\times\omega\to\{0,1\}|dom(f)\,is\,finite\}$, $f\leqslant g\Leftrightarrow f\supseteq g$, $\mathbb{1}=\varnothing$.
 $\mathcal{F}=\bigcup G\colon (\omega_2)^\class{M}\times\omega\to\{0,1\}$ function, $G\notin\class{M}$. Then $\mathcal{F}\in\class{M}[G]$.
 
 \mytitle{$\neg$\class{GCH}}
 
 \mytitle{$\neg$\class{AC}}
+
+\mytitle{Set/class models}
+$\class{ZF}\setminus \class{AF}\vdash (\class{ZF}\setminus \class{Inf.})^{\class{W}(\omega)}$, $(\class{ZF}\setminus \class{Inf.})^\WF$, $(\class{ZF})^\WF$\\
+$\class{ZF}\vdash (\class{AC})^{\class{L}}$, $\class{ZF}\vdash \V=\class{L}\to \class{AC}, \class{GCH}$.
 \end{multicols*}
 \end{document}
