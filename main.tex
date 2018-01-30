@@ -128,27 +128,29 @@ Foundation $\Leftrightarrow$ $\in$ w.f. $\forall x$ $\Leftrightarrow$ $\V=\WF$
 $(\exists x \varphi)^M=\exists x\in M(\varphi)^M$, $(\forall x \varphi)^M=\forall x\in M(\varphi)^M$. $\vdash\varphi$ $\Rightarrow$ $\vdash\varphi^M$
 
 \mytitle{The Mostowski Collapse}
+Goal: making class $\class{M}$ transitive.\\
 $\class{R}$ set-like on $\class{M}$ $\Leftrightarrow$ $\forall y\in \class{M} \class{R}^{-1}[y]=\{x\in \class{M}|x\class{R}y\}$ set.\\
 $cl^0(\lceil\frac{x}{}\rceil^\Rr_\X)=\X\cap \Rr^{-1}[z]$, $cl^{n+1}=\bigcup\{\lceil\frac{z}{}\rceil^\Rr_\X|z\in cl^n\}$, $cl=\bigcup \{cl^n|n\in\omega\}$\\
 $\Rr$ w.f. on $\class{M}$ $\Leftrightarrow$ $\forall \underline{X}\subseteq \M \X\neq\varnothing\to\exists y\in x\,\forall z\in x \neg z\Rr y$.
 $\forall\class{X}\subseteq\class{M} \class{X}\neq\varnothing\to\exists y\in\class{X}\,\forall x\in\class{X}\neg x\Rr y$\\
-$\class{G}(x)=\{\class{G}(y)|y\in\class{M}\wedge y\class{R}x\}$. Most. coll. $\class{G}[\class{M}]$. $x\class{R}y\to \class{G}(x)\in\class{G}(y)$, $N$ trans., $N\subseteq \WF$
+$\class{G}(x)=\{\class{G}(y)|y\in\class{M}\wedge y\class{R}x\}$. Most. coll. $\class{G}[\class{M}]$. $x\class{R}y\to \class{G}(x)\in\class{G}(y)$, $N$ trans., $N\subseteq \WF$\\
+$\Rr$ extensional iff $\forall x\in\M\,\forall y\in\M\left(x\neq y\to \lceil\frac{x}{}\rceil^\Rr_\M \neq\lceil\frac{y}{}\rceil_\M^\Rr\right)$\\
+(ZF-AF) $\Rr$ w.f. and set-like, ext. $\Rightarrow$ $(\M,\Rr)\overset{!\class{G}}{\approx}(\class{N}=\class{G}[\M],\in)$\\
 
 \mytitle{Preservation under Relativization}
 Prop. of class $\Rightarrow$ axioms in class.\\
-$\class{M}$ trans. $\Rightarrow$ Extensionality$^M$
+$\class{M}$ trans. $\Rightarrow$ Extensionality$^M$, $\{x\in y|\varphi^\M\}\in\M\Rightarrow$ Compr.$^M$, $P(x)\cap\M\subseteq y\in \M\Rightarrow$ Pow$^\M$, $\M\subseteq \WF\Rightarrow$ Found$^\M$
 
 \mytitle{Absoluteness}
 $\varphi$ abs. for $\class{M}\subseteq\class{N}$ $\Leftrightarrow$ $\forall x_1\in M...\forall x_n\in M \varphi^M\leftrightarrow\varphi^N$.\\
 $\varphi$ abs. for $M$ if abs. for $\class{M}, \V$.
-$\class{M}$ trans. then rud. form. abs.
+$\class{M}$ trans. then $\Delta_0^0$-rud. form. ($\exists x(x\in y\wedge\psi)$ or $\forall x(x\in y\to\psi)$) abs.
 
 \mytitle{Arithmetic and Recursivity}
 $f\colon \N^p\supseteq dom_f\to \N$. Part. and tot.\\
-Part. rec: const., proj.,$S$, compos., rec., min. $\Leftrightarrow$ Tur.-comp.\\
-Prim. rec: same but min.\\
-Robinson: $L=\{0,S,+,\cdot\}$, $\forall x Sx\neq 0$, $\forall x\,\exists y (x\neq 0\to Sy=x)$, $\forall x \,\forall y (Sx=Sy\to x=y)$, $\forall x\,x+0=x$, $\forall x\,\forall y (x+Sy=S(x+y))$, $\forall x\,x\cdot 0=0$, $\forall x\,\forall y X\cdot Sy=(x\cdot y)+x$.
-$\phi$ repr. func. $f$ $\Leftrightarrow$ Rob$\vdash f(\vec{x})=x_0\Leftrightarrow\phi(x_0,\vec{x})$. $\phi$ repr. set $\Leftrightarrow$ $\vdash\phi$ or $\vdash\neg\phi$. Coding seqs of ints. Coding formulas. Coding proofs.
+Part. rec: const., proj., succ., compos., rec., min. $\Leftrightarrow$ Tur.-comp. Prim. rec: same but min.
+Robinson: $L=\{0,S,+,\cdot\}$, 1 $\forall x Sx\neq 0$, 2 $\forall x\,\exists y (x\neq 0\to Sy=x)$, 3 $\forall x \,\forall y (Sx=Sy\to x=y)$, 4 $\forall x\,x+0=x$, 5 $\forall x\,\forall y (x+Sy=S(x+y))$, 6 $\forall x\,x\cdot 0=0$, 7 $\forall x\,\forall y\,x\cdot Sy=(x\cdot y)+x$.
+$\phi$ repr. func. $f$ $\Leftrightarrow$ Rob$\vdash f(\vec{x})=x_0\Leftrightarrow\phi(x_0,\vec{x})$. $\phi$ repr. set $\Leftrightarrow$ $\vdash\phi$ or $\vdash\neg\phi$. Coding seqs of ints. Coding formulas. Coding proofs (seqnt calc.). Ex. set $\mathcal{F}_{{\color{green}\checkmark}!free}$ is prim. rec.
 
 \mytitle{Undecidability Results}
 $T$ rec. if $\{\code{\varphi}|\varphi\in T\}$ is rec. Dec. if $thms(T)=\{\code{\varphi}|T\vdash\varphi\}$ is rec.\\
