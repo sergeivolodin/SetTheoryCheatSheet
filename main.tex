@@ -209,14 +209,34 @@ also $\class{M}[G]\models "\class{ZFC}"$.\\
 \mytitle{$\neg$CH}
 Define $\Pp\in\class{M}$ c.t.m. "$\class{ZFC}$", $\forall G$ $\Pp$-gen. over $\class{M}$, $\class{M}[G]\models\neg\class{CH}$.
 $\Pp_{\omega_2}=\{f\colon (\omega_2)^\class{M}\times\omega\to\{0,1\}|dom(f)\,is\,finite\}$, $f\leqslant g\Leftrightarrow f\supseteq g$, $\mathbb{1}=\varnothing$.
-$\mathcal{F}=\bigcup G\colon (\omega_2)^\class{M}\times\omega\to\{0,1\}$ function, $G\notin\class{M}$. Then $\mathcal{F}\in\class{M}[G]$.
-
+$\mathcal{F}=\bigcup G\colon (\omega_2)^\class{M}\times\omega\to\{0,1\}$ function, $G\notin\class{M}$. $G\in \M[G]\Rightarrow\mathcal{F}\in\class{M}[G]$,\\
+$D_{\alpha\beta}=\{p\in\Pp|\exists n\in\omega (\alpha,n),\,(\beta,n)\in dom(p),\,p(\alpha,n)\neq p(\beta, n)\}\in \M$, dense in $\Pp$. $\alpha<\beta<(\omega_2)^\M\Rightarrow D_{\alpha\beta}\cap G=\varnothing$ $\Rightarrow\exists n \mathcal{F}(\alpha, n)\neq\mathcal{F}(\beta, n)$ $\Rightarrow$ $(|P(w)|\geqslant (\omega_2))^{\M[G]}$\\
+Str. antich. $\forall p,\,q\in A\,p\neq q\to p\bot q$\\
+$(\lambda\,card)^\M$ $\Pp-\lambda\,c.c.\Leftrightarrow\forall A\,ant.\,ch.\, (|A|<\lambda)^\M$\\
+$(\lambda\,reg)^\M$, $(\Pp-\lambda\,c.c.)^\M$ $\Rightarrow$ $\Pp$ preserv. card. $\geqslant\lambda$\\
+$\Pp-\lambda-closed\Leftrightarrow\forall\gamma<\lambda\forall (p_\xi)\subseteq\Pp\,\exists p\in \Pp\,p\leqslant p_\xi$\\
+$p\Vdash\exists x\in\sigma \varphi(x,\vec{\tau})\Rightarrow\exists q\leqslant p\,\eta\in dom\sigma\colon q\Vdash \varphi(\eta,\vec{\tau})$\\
+$(\lambda-card)^\M,\,(\Pp-\lambda-cl.)^\M\Rightarrow\Pp$ pres. card. $\leqslant\lambda$\\
+$F$-fam. of fin. sets $|F|=\aleph_1$ $\Rightarrow\exists F'\subseteq F$, $r$-fin., $|F'|=\aleph_1$, $\forall a, b\in F'\,a\cap b=r$ ($\Delta$-system)\\
+$\Pp_{\omega_2}$ has c.c.c. $\Rightarrow$ pres. all cards: $\aleph_\alpha^{\M[G]}=\aleph_\alpha^\M$\\
+$(\Pp-c.c.c)^\M$, $(\lambda-card)^\M$ $\Rightarrow|P(\lambda)|^{\M[G]}\leqslant(|\Pp|^\lambda)^\M$\\
+$\M$ c.t.m. $\class{ZFC}+\class{CH}$, $\Pp=\Pp_{\omega_2}^\M$. $\class{CH}^M\to(2^{\aleph_0}=\aleph_2)^{\M[G]}$\\
 \mytitle{$\neg$\class{GCH}}
-
+$\alpha\in\On$, $\Pp_{\aleph_\alpha}=\{f\colon\aleph_\alpha^\M\times\omega\to2|dom(f)\,is\,fin.\}$, $f\leqslant g\leftrightarrow f\supseteq g,\,\mathbb{1}=\varnothing$\\
+$\Pp_{\aleph_\alpha}$ has c.c.c., $\Pp=\Pp_{\aleph_{\alpha+1}}^\M$, $(\class{GCH})^\M\to(2^{\aleph_0}=\aleph_{\alpha+1})^{\M[G]}$\\
 \mytitle{$\neg$\class{AC}}
-
+$\pi\colon \Pp\to\Pp$ autom.: bij, $p\leqslant q\Leftrightarrow \pi(p)\leqslant \pi(q)$, $\pi(\mathbb{1})=\mathbb{1}$\\
+$\pi\in \M$ autom. $G-\Pp-gen\Leftrightarrow\pi[G]-\Pp-gen.$\\
+$\hat{\pi}\colon \M^\Pp\to\M^\Pp$, $\hat{\pi}(\tau)=\{(\hat{\pi}(\sigma),\pi(p))|(\sigma,p)\in\tau\}$\\
+$\pi$ autom. $\Rightarrow$ $\M[\pi[G]]=\M[G]$, $\forall x\hat{\pi}(\check{x})=\check{x}$, $\forall\vec{\tau}\forall p\in\Pp p\Vdash\varphi(\vec{\tau})\Leftrightarrow\pi(p)\Vdash\varphi(\hat{\pi}(\vec{\tau}))$\\
+$b\in OD(A)\Leftrightarrow b=\{z\in \V_\alpha |a_i\in A,\,\varphi(z,\vec{\alpha},\vec{a},A)\}$\\
+$b\in HOD(A)\Leftrightarrow b\in OD(A),\,tc(b)\subseteq OD(A)$\\
+$(\class{ZF})^{HOD(A)}$,\\
+$\forall \M$ c.t.m. "\class{ZFC}" $\Pp_{\aleph_0}\in\M$ $\exists A\in \M$ $((\neg\class{AC})^{HOD(A)})^{\M[G]}$
 \mytitle{Set/class models}
 $\class{ZF}\setminus \class{AF}\vdash (\class{ZF}\setminus \class{Inf.})^{\class{W}(\omega)}$, $(\class{ZF}\setminus \class{Inf.})^\WF$, $(\class{ZF})^\WF$\\
-$\class{ZF}\vdash (\class{AC})^{\class{L}}$, $\class{ZF}\vdash \V=\class{L}\to \class{AC}, \class{GCH}$.
+$\class{ZF}\vdash (\class{AC})^{\class{L}}$, $\class{ZF}\vdash \V=\class{L}\to \class{AC}, \class{GCH}$.\\
+$\class{ZFC}\vdash cons(\class{ZFC})\to cons(\class{ZF}+\neg\class{AC})$\\
+$\class{ZFC}\vdash cons(\class{ZFC})\to cons(\class{ZFC}+\neg \class{CH})$
 \end{multicols*}
 \end{document}
