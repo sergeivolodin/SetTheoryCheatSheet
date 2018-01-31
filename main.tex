@@ -107,7 +107,7 @@ $f\colon\beta\to\alpha$ cof. if $ran(f)$ unb. in $\alpha$\\
 $cof(\alpha)$ least $\beta$ $\exists f\overset{cof.}{\to}\alpha$\\
 $\kappa$ reg. $cof(\kappa)=\kappa$ oth. sing.\\
 $\kappa^+$ reg., $\kappa^{cof(\kappa)}>\kappa$, $cof(2^\kappa)>\kappa$.
-CH: $2^{\aleph_0}=\aleph_1$. $\class{GCH}$: $\forall\alpha 2^{\aleph_\alpha}=\aleph_{\alpha+1}$\\
+\class{CH}: $2^{\aleph_0}=\aleph_1$. $\class{GCH}$: $\forall\alpha 2^{\aleph_\alpha}=\aleph_{\alpha+1}$\\
 $\kappa$ weak. incs. if reg. and limit; str. if reg and $\forall\lambda<\kappa 2^\lambda<\kappa$\\
 $|\R|=2^{\aleph_0}=\beth_1$. $\class{GCH}$ $\Rightarrow$ str. inacc. $\Leftrightarrow$ weak. inacc.\\
 \mytitle{Well-Founded Sets}
@@ -158,14 +158,14 @@ $\Sigma_1^0$: $\exists\vec{x}\phi$, $\phi\in\Delta_0^0$\\
 $I(ind)\Sigma_1^0$. $\exists y(y+x=z\wedge x\neq z)$
 $f$ tot. rec. $\Rightarrow$ repr. by $\Sigma_1^0$ form.\\
 {\bf 2nd inc.} $diag(n)=\code{\phi_{\code{\phi}/x_0}}$, $\phi$ 1 free var. $\Rightarrow \phi_{diag}(x_0,x_1)$, $\Sigma_1^0\ni\Xi(x_0)=\exists x_1,x_2 \phi_{proof_T}(x_1, x_2)\wedge\phi_{diag}(x_2,x_1)$. $\mathbb{N}\models \Xi(n)\Leftrightarrow Rob.\vdash \Xi(n)$\\
-$T\supseteq Rob$ cons., rec. $T\vdash \Xi_{\code{\Xi/x_0}}\to\exists x_1 \phi_{proof_{Rob}}(x_1, \code{\Xi_{\code{\Xi/x_0}}})$ then $T\not\vdash cons(T)$\\
-$Cons(\class{ZF}/C)\Rightarrow \class{ZF}\not\vdash cons(\class{ZF}/C)$\\
+$T\supseteq Rob$ cons., rec. $T\vdash \Xi_{\code{\Xi/x_0}}\to\exists x_1 \phi_{proof_{Rob}}(x_1, \code{\Xi_{\code{\Xi/x_0}}})$ then $T\not\vdash \mbox{cons}(T)$\\
+$\mbox{cons}(\class{ZF}/C)\Rightarrow \class{ZF}\not\vdash \mbox{cons}(\class{ZF}/C)$\\
 \mytitle{G\"odel's Constructible Universe}
 $X$ def over $Y$: $X=\{y\in Y|\varphi(x,a_1/x_1,...,a_n/x_n)^Y,\,a_i\in Y\}$\\
 Definability with codes in 1st order. Defin. subsets $\Def(Y)$\\
-Constructible sets $\class{L}$: $\L(0)=\varnothing$, $\L(\alpha+1)=\Def(\L(\alpha))$, $\L(\alpha)=\bigcup\limits_{\xi<\alpha}\L(\xi)$\\
+Constructible sets $\class{L}$: $\Ll(0)=\varnothing$, $\Ll(\alpha+1)=\Def(\Ll(\alpha))$, $\Ll(\alpha)=\bigcup\limits_{\xi<\alpha}\Ll(\xi)$\\
 $Y\in\Def(Y)$, $P_{fin}\in\Def(Y)$, Y trans $\Rightarrow Y\subseteq \Def(Y)$, $\class{AC},\,|Y|\geqslant\omega\Rightarrow|\Def(Y)|=|Y|$.\\
-$rk_L(x)=\mu\alpha\in\On\,x\in \L(\alpha+1)$, $\class{AC} |\L(\alpha)|=|\alpha|$, $\L(\omega)=\V(\omega)$, $\L\cap\On=\On$\\
+$rk_L(x)=\mu\alpha\in\On\,x\in \Ll(\alpha+1)$, $\class{AC} |\Ll(\alpha)|=|\alpha|$, $\Ll(\omega)=\V(\omega)$, $\Ll\cap\On=\On$\\
 $\V=\class{L}\colon \forall x\exists \alpha\,x\in\class{L}(\alpha)$, $\V=\Ll\Rightarrow P(\kappa)\subseteq\Ll(\kappa^+)$, $<_\Ll\colon \Ll\times\Ll$\\
 Refl.: $\class{ZF}\vdash \forall\alpha\,\exists\beta>\alpha\,\phi_0,...,\phi_n\,abs.\,for\, \class{L}(\beta),\,\class{L}$\\
 $X\subseteq M$. $X\prec M\Leftrightarrow$ $\forall \varphi,\,\forall a_i\in X$ $\varphi(\vec{a})^X\leftrightarrow\varphi(\vec{a})^M$\\
@@ -173,8 +173,8 @@ $\omega<\alpha$ limit, $X\prec\Ll(\alpha)$ $\Rightarrow\exists \beta,\,(X,\in)\a
 $\forall\alpha,\,X\subseteq \Ll(\alpha),\,\exists M,\,|M|=\sup\{\aleph_0,|X|\},\,X\subseteq M,\,M\prec\Ll(\alpha)$\\
 Inner model $\class{M}$: trans., $\class{On}\cap\class{M}=\class{On}\cap\V$, $(\class{ZFC})^\class{M}$\\
 \mytitle{Forcing}
-{\bf Want prove:} $Cons(\class{ZFC})\Rightarrow Cons(\class{ZFC}+\neg CH)$.
-Method: $\class{ZFC}+\neg CH\vdash\bot\Rightarrow\exists \Phi_1,...,\Phi_n$ in $+\neg CH$, $\Phi_1,...,\Phi_n\vdash \Phi \wedge\neg\Phi$.
+{\bf Want prove:} $\mbox{cons}(\class{ZFC})\Rightarrow \mbox{cons}(\class{ZFC}+\neg \class{CH})$.
+Method: $\class{ZFC}+\neg \class{CH}\vdash\bot\Rightarrow\exists \Phi_1,...,\Phi_n$ in $+\neg \class{CH}$, $\Phi_1,...,\Phi_n\vdash \Phi \wedge\neg\Phi$.
 Forcing $\Rightarrow$ $\class{ZFC}\vdash\exists\class{N}(\Phi_1^\class{N}\wedge...\wedge\Phi_n^\class{N})$, then $\class{ZFC}\vdash \Phi^\class{N}\wedge\neg\Phi^\class{N}$, then $\class{ZFC}\wedge\bot$\\
 Forcing: $\Psi_1,...,\Psi_k\vdash \exists\class{N}(\Phi_1^\class{N}\wedge...\wedge\Phi_n^\class{N})$.\\
 $\forall \{\Psi_1,...,\Psi_k\}$ consider c.t.m. $\class{M}$ (refl.) $\class{M}\models \Psi_1\wedge...\wedge\Psi_k$, forcing: $\class{N}=\class{M}[\class{G}]\models\Phi_1\wedge...\wedge\Phi_n$\\
@@ -206,7 +206,7 @@ $\underline{p\Vdash_*\exists x\varphi(x,...)}$ iff $\{q\in \Pp|\exists \sigma\in
 $\underline{p\Vdash_*\varphi(\tau_1,...,\tau_n)}$ $\Leftrightarrow$ $\forall r\leqslant p\,r\Vdash_*\varphi(...)$ $\Leftrightarrow$ $\{r\in\Pp|r\Vdash_*\varphi(...)\}$ dense below $p$.\\
 {\bf Truth lemma:} $\varphi(x_1,...,s_n)\in L_{ST}\,\class{M}$ is c.t.m. of "$\class{ZFC}$", $\Pp$ forc. on $\class{M}$, $\tau_1,...,\tau_n\in\class{M}^\Pp$, $G$ $\Pp$-gen. over $\class{M}$ $\class{M}[G]\models \varphi((\tau_1)_G,...,(\tau_n)_G)\Leftrightarrow\exists p\in G(p\Vdash_*\varphi(\tau_1,...,\tau_n))^M$\\
 also $\class{M}[G]\models "\class{ZFC}"$.\\
-\mytitle{$\neg$CH}
+\mytitle{$\neg$\class{CH}}
 Define $\Pp\in\class{M}$ c.t.m. "$\class{ZFC}$", $\forall G$ $\Pp$-gen. over $\class{M}$, $\class{M}[G]\models\neg\class{CH}$.
 $\Pp_{\omega_2}=\{f\colon (\omega_2)^\class{M}\times\omega\to\{0,1\}|dom(f)\,is\,finite\}$, $f\leqslant g\Leftrightarrow f\supseteq g$, $\mathbb{1}=\varnothing$.
 $\mathcal{F}=\bigcup G\colon (\omega_2)^\class{M}\times\omega\to\{0,1\}$ function, $G\notin\class{M}$. $G\in \M[G]\Rightarrow\mathcal{F}\in\class{M}[G]$,\\
@@ -236,7 +236,7 @@ $\forall \M$ c.t.m. "\class{ZFC}" $\Pp_{\aleph_0}\in\M$ $\exists A\in \M$ $((\ne
 \mytitle{Set/class models}
 $\class{ZF}\setminus \class{AF}\vdash (\class{ZF}\setminus \class{Inf.})^{\class{W}(\omega)}$, $(\class{ZF}\setminus \class{Inf.})^\WF$, $(\class{ZF})^\WF$\\
 $\class{ZF}\vdash (\class{AC})^{\class{L}}$, $\class{ZF}\vdash \V=\class{L}\to \class{AC}, \class{GCH}$.\\
-$\class{ZFC}\vdash cons(\class{ZFC})\to cons(\class{ZF}+\neg\class{AC})$\\
-$\class{ZFC}\vdash cons(\class{ZFC})\to cons(\class{ZFC}+\neg \class{CH})$
+$\class{ZFC}\vdash \mbox{cons}(\class{ZFC})\to \mbox{cons}(\class{ZF}+\neg\class{AC})$\\
+$\class{ZFC}\vdash \mbox{cons}(\class{ZFC})\to \mbox{cons}(\class{ZFC}+\neg \class{CH})$
 \end{multicols*}
 \end{document}
